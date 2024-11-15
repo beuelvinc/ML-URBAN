@@ -1,0 +1,1484 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
+:root {
+  --max-width: 1100px;
+  --border-radius: 12px;
+  --font-mono: 'Open Sans';
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background-color: '#E5E5E5';
+  font-family: 'Open Sans';
+  color: #141B2D;
+}
+
+html,
+body {
+  max-width: 100vw;
+  position: relative;
+}
+
+.splash-animation {
+  width: 500px;
+  height: 380px;
+  overflow: hidden;
+}
+
+.splash {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.splashContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1C3988;
+}
+
+.secondary-btn {
+  padding: 13px 24px;
+  background-color: transparent;
+  font-weight: 600;
+  color: #1C3988;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 2px solid #1C3988;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.secondary-btn:hover {
+  background-color: #0F2652;
+  color: #FFF;
+}
+
+.primary-btn {
+  padding: 13px 24px;
+  background-color: #1C3988;
+  color: #FFFFFF;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+  border: none;
+}
+
+.contact-btn:hover {
+  background-color: #0F2652;
+}
+
+.heading-listing {
+  font-size: 26px !important;
+  margin-bottom: 1rem;
+}
+
+.text-primary {
+  font-size: 50px;
+  font-family: 'Merriweather';
+  font-weight: 600;
+}
+
+.text-secondary {
+  font-size: 20px;
+}
+
+.disabled {
+  background-color: #9C2B2E;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.disabled:hover {
+  background-color: #7F1F21 !important;
+}
+
+.note {
+  margin-left: 1rem;
+  font-size: 13px;
+}
+
+.secondary-navbar {
+  padding: 1.5rem 3rem;
+}
+
+/* pages */
+
+.main-container {
+  /* overflow-y: scroll; */
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+  scroll-behavior: smooth;
+}
+
+.inner-screen {
+  padding: 1.5rem 3rem;
+  height: 100vh;
+}
+
+.screen {
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-behavior: smooth;
+}
+
+.offers-page {
+  height: 100vh;
+  background-color: #F3F3FA;
+  margin-top: 6rem;
+}
+
+.spNotVisible {
+  background-color: #9C2B2E;
+}
+
+/* mobile */
+
+@media (max-width: 900px) {
+  .showmore-btn {
+    display: block !important;
+  }
+
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: '#E5E5E5';
+    font-family: 'Open Sans';
+    color: #141B2D;
+  }
+
+  .splash-animation {
+    all: unset;
+  }
+
+  .inner-screen {
+    padding: 1.5rem 1rem;
+  }
+
+  .navbar-link {
+    text-decoration: none;
+    font-size: 16px;
+    display: none;
+  }
+
+  .contact-btn {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block !important;
+    z-index: 19 !important;
+  }
+
+  .menu-opened {
+    background-color: #1C3988;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 19;
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.6);
+    padding: 50px 50px;
+    -webkit-animation: slideIn 0.5s forwards;
+    -moz-animation: slideIn 0.5s forwards;
+    animation: slideIn 0.5s forwards;
+    overflow: hidden !important;
+  }
+
+  .menu-opened-out {
+    background-color: #1C3988;
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 19;
+    padding: 50px 50px;
+    -webkit-animation: slideOut 0.5s forwards;
+    -moz-animation: slideOut 0.5s forwards;
+    animation: slideOut 0.5s forwards;
+    overflow: hidden !important;
+  }
+
+  .splash-out {
+    -webkit-animation: slideOut 1s forwards;
+    -moz-animation: slideOut 1s forwards;
+    animation: slideOut 1s forwards;
+  }
+
+  @-moz-keyframes slideOut {
+    0% {
+      transform: translateX(0px);
+    }
+
+    100% {
+      transform: translateX(-900px);
+    }
+  }
+
+  @-webkit-keyframes slideOut {
+    0% {
+      transform: translateX(0px);
+    }
+
+    100% {
+      transform: translateX(-900px);
+    }
+  }
+
+  @keyframes slideOut {
+    0% {
+      transform: translateX(0px);
+    }
+
+    100% {
+      transform: translateX(-900px);
+    }
+  }
+
+
+  @-webkit-keyframes slideIn {
+    0% {
+      transform: translateX(-900px);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @-moz-keyframes slideIn {
+    0% {
+      transform: translateX(-900px);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-900px);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .menu-link {
+    display: block !important;
+    margin-top: 1rem;
+    font-size: 35px;
+    font-weight: 600;
+    color: #F3F3FA;
+    text-decoration: none;
+    font-family: 'Merriweather';
+    padding-bottom: 1rem;
+  }
+
+  .menu-links-container {
+    margin-top: 5rem;
+  }
+
+  .header-main {
+    padding: none !important;
+    margin-top: 0 !important;
+  }
+
+  .navbar-container {
+    /* padding: 0.3rem 1rem !important; */
+    padding: 0 !important;
+  }
+
+  .header-image {
+    display: none;
+  }
+
+  .header-description {
+    max-width: 100% !important;
+    margin-top: 1rem;
+  }
+
+  .header-description_text {
+    margin-top: 0.5rem !important;
+    font-size: 15px !important;
+  }
+
+  .header-description_heading {
+    font-size: 35px !important;
+    margin-top: 1rem !important;
+  }
+
+  .prediction-box {
+    margin-top: 1rem !important;
+    padding: 1.5rem 0.5rem !important;
+  }
+
+  .prediction-input_container {
+    margin-top: 1rem !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
+
+  .prediction-input_container--details {
+    width: 100% !important;
+  }
+
+  .prediction-input {
+    width: 100% !important;
+    margin-bottom: 0.2rem;
+    padding: 0.7rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .prediction-result-text {
+    font-size: 30px !important;
+    margin-left: 1rem;
+  }
+
+  .prediction-input_container--details {
+    width: 100%;
+  }
+
+  .prediction-input_container--result {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .prediction-result-box {
+    flex: 1;
+  }
+
+  .predicted-price-heading {
+    font-size: 15px !important;
+    font-weight: 900;
+
+  }
+
+  .predicted-price {
+    display: block;
+    margin-top: 0.5rem !important;
+    font-size: 25px !important;
+    font-weight: 900;
+  }
+
+  .offer-header {
+    display: block !important;
+  }
+
+  .text-primary {
+    font-size: 35px;
+  }
+
+  .text-secondary {
+    font-size: 15px;
+  }
+
+  .listing {
+    height: 350px !important;
+    margin-top: 2rem !important;
+  }
+
+  .listing-text {
+    font-size: 12px;
+  }
+
+  .offer-text {
+    margin-bottom: 1rem;
+  }
+
+  .secondary-btn {
+    padding: 10px 21px;
+    font-size: 12px;
+  }
+
+  .indication-symbol {
+    padding: 0.5rem !important;
+    margin-left: 0.5rem !important;
+    border-radius: 50%;
+  }
+
+  .about-main {
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column !important;
+  }
+
+  .about-header {
+    padding: 0 !important;
+    display: block !important;
+  }
+
+  .about-text-container {
+    margin-left: 0 !important;
+    margin-top: 1rem;
+  }
+
+  .text-about {
+    font-size: 15px !important;
+  }
+
+  .about-main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: normal !important;
+    align-items: normal !important;
+    width: 100% !important;
+  }
+
+  .about-main-imgs {
+    flex-direction: row !important;
+    justify-content: center !important;
+
+  }
+
+  .review-container {
+    width: 100% !important;
+  }
+
+  .review-text-mobile {
+    font-size: 13px;
+  }
+
+  .about-main-details {
+    font-size: 13px !important;
+  }
+
+  .about-main-text {
+    display: block !important;
+  }
+
+  .footer {
+    height: 100px !important;
+  }
+
+  .newsletter {
+    height: 300px !important;
+    padding: 2rem
+  }
+
+  .footer-section {
+    margin-top: 6rem;
+  }
+
+  .newsletter-content {
+    margin-left: 5rem;
+  }
+
+  .newsletter-heading {
+    font-size: 20px !important;
+  }
+
+  .newsletter-text {
+    font-size: 15px !important;
+  }
+
+  .newsletter-input {
+    margin-bottom: 1rem !important;
+  }
+
+  .footer-rights {
+    font-size: 13px;
+  }
+
+
+  /* offersPage */
+  .offersPageMain {
+    margin-top: 0 !important;
+  }
+
+  .secondary-navbar {
+    padding: 1.5rem 1rem;
+  }
+
+  .offersPageSettings-slider--container {
+    width: 100% !important;
+  }
+
+  .offersPageSettings-slider--container--sub {
+    width: 100%;
+  }
+
+  .offersPageSettings-slider {
+    width: 100% !important;
+  }
+
+  .offersPageSettings-slider-indicators {
+    width: 100% !important;
+  }
+
+  .offersPageSettings {
+    margin-top: 2rem;
+    background-color: #F3F3FA;
+    padding: 2rem 1rem !important;
+  }
+
+  .offer-listing {
+    width: 100% !important;
+  }
+
+  .offerPageResultsContiner {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0.5rem !important;
+  }
+
+  .no_houses {
+    margin-top: 5rem !important;
+  }
+
+  /* .singleListDetails {
+    display: none;
+  } */
+
+  .singleListingContainer {
+    flex-direction: column;
+    padding: 0 !important;
+  }
+
+  .singleListing {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .singleListDetails {
+    width: 100% !important;
+    display: flex;
+    flex-direction: column-reverse
+  }
+
+  .indication-symbol-next {
+    margin-right: 8px;
+  }
+
+  .houseDetailContainer {
+    padding: 0 !important;
+  }
+
+  .mortgageContainer {
+    flex-direction: column !important;
+    align-items: center;
+    width: 100% !important;
+    border-radius: 0 !important;
+  }
+
+  .mortgageContainer p {
+    margin-bottom: 1rem;
+  }
+
+  .houseDetailsubContainer {
+    padding: 0 2rem;
+    align-items: center;
+  }
+
+  .details-description {
+    padding: 0 2rem;
+  }
+
+  .houseAdditionalDetails-container {
+    border-radius: 0 !important;
+  }
+
+  .advertiser_container {
+    border-radius: 0 !important;
+    margin: 0 !important;
+  }
+
+  .contact-form {
+    border-radius: 0 !important;
+  }
+
+  .location {
+    margin-top: 2rem;
+  }
+
+  .mortgage-btn-text {
+    margin-bottom: 5px !important;
+  }
+
+  .mortgage-btn {
+    display: flex !important;
+    align-items: center;
+    padding: 5px 15px !important;
+  }
+}
+
+/* desktop */
+
+.menu-link {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+}
+
+.navbar-link {
+  position: relative;
+  margin-right: 20px;
+  text-decoration: none;
+  color: #000;
+  padding-bottom: 0.2rem;
+  cursor: pointer;
+}
+
+.navbar-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #1C3988;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar-link:hover::after {
+  width: 100%;
+}
+
+
+.navbar-items {
+  margin-left: 2rem;
+}
+
+.navbar-link {
+  text-decoration: none;
+  font-size: 16px;
+  margin-right: 1rem;
+}
+
+.header-main {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  margin-top: 3rem;
+}
+
+.header-description {
+  max-width: 50%;
+}
+
+.header-description_heading {
+  display: block;
+  font-family: 'Merriweather';
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 3.5rem;
+}
+
+.header-description_text {
+  font-size: 20px;
+  max-width: 80%;
+  margin-top: 1rem;
+}
+
+.header-image {
+  height: 100%;
+  overflow: hidden;
+}
+
+.header-img {
+  object-fit: cover;
+}
+
+.prediction-loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prediction-input_container--result {
+  width: 60%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prediction-box {
+  background-color: #F3F3FA;
+  margin-top: 2rem;
+  padding: 1.5rem 1rem;
+  border-radius: 5px;
+}
+
+.prediction-heading {
+  font-family: 'Merriweather';
+  margin-left: 1rem;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.prediction-room_box {
+  display: flex;
+  width: 80%;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+.prediction-input_container--details {
+  width: 50%;
+}
+
+.prediction-input_container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.prediction-input {
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  width: 100%;
+  margin-left: 0.5rem;
+  padding: 0.5rem;
+}
+
+.prediction-btn-box {
+  margin-top: 2rem;
+  margin-left: 1rem;
+}
+
+.prediction-btn {
+  border: none;
+  cursor: pointer;
+}
+
+.prediction-btn:hover {
+  background-color: #0F2652;
+}
+
+
+.prediction-result-box {
+  flex: 1;
+}
+
+.predicted-price-heading {
+  font-size: 25px;
+  font-weight: 900;
+
+}
+
+.predicted-price {
+  display: block;
+  margin-top: 1rem;
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.loading-container {
+  margin-top: 5rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 200px;
+}
+
+.offer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.offer-text {
+  max-width: 560px;
+  margin-top: 1rem;
+}
+
+.offer-price {
+  margin: 0.5rem 0;
+}
+
+.offer-address {
+  font-size: 13px;
+}
+
+.offer-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.listing {
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 420px;
+  border-radius: 5px;
+  margin-top: 3rem;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+.listing-img-container {
+  height: 60%;
+  overflow: hidden;
+}
+
+.listing-details {
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 150px;
+}
+
+.indicator-container {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+.indication-line {
+  height: 2px;
+  background-color: #DADAEE;
+  width: 100%;
+  position: relative;
+}
+
+.indication-symbol {
+  padding: 1rem;
+  background-color: #1C3988;
+  margin-left: 1rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* OffersMain.css */
+
+.indication-symbol.disabled {
+  background-color: #DADAEE;
+  cursor: not-allowed;
+}
+
+.indication-progress {
+  width: 100px;
+  background-color: #1C3988;
+  height: 2px;
+  position: absolute;
+  border: 1px solid blue;
+  top: 0;
+  transition: all ease 0.3s;
+}
+
+.about-header {
+  padding: 0 10rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-primary {
+  display: block;
+}
+
+.about-text-container {
+  margin-left: 5rem;
+  margin-top: 1rem;
+}
+
+.text-about {
+  font-size: 17px;
+  margin-top: 24px;
+}
+
+.about-para-one {
+  margin-bottom: 1rem;
+}
+
+.about-main {
+  padding: 0 10rem;
+  margin-top: 3rem;
+}
+
+.about-main-text {
+  background-color: #F3F3FA;
+  width: 96%;
+  height: 300px;
+  border-radius: 5px;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.about-main-heading {
+  font-size: 25px;
+  font-family: 'Merriweather';
+}
+
+.about-main-details {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.about-main-imgs {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.review-container {
+  width: 50%;
+}
+
+.newsletter {
+  height: 400px;
+  background-color: #F3F3FA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.newsletter-content {
+  margin-left: 5rem;
+}
+
+.newsletter-heading {
+  font-size: 30px;
+  font-weight: 600;
+  font-family: 'Merriweather';
+}
+
+.newsletter-text {
+  margin: 1rem 0;
+}
+
+.newsletter-input {
+  padding: 13px 24px;
+  margin-right: 1rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.newsletter-input:focus {
+  outline: none;
+}
+
+.footer {
+  height: 190px;
+  background-color: #1C3988;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 0;
+}
+
+.footer-rights {
+  margin-top: 1rem;
+  color: #FFF;
+}
+
+/* pages */
+
+/* offers */
+
+.offersPageMain {
+  margin-top: 3rem;
+}
+
+.offersPageMain-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.offersPageSettings {
+  margin-top: 2rem;
+  background-color: #F3F3FA;
+  padding: 2rem 10rem;
+}
+
+.offersPageSettings-input--container {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.offersPageSettings-input {
+  width: 400px;
+}
+
+.offersPageSettings-filterHeading--container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.offersPageSettings-filterHeading--text {
+  padding: 0 2rem;
+  z-index: 1;
+  background-color: #F3F3FA;
+  color: #141B2D;
+}
+
+.offersPageSettings-filterHeading--line::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  right: 10px;
+  height: 1px;
+  background-color: #DADAEE;
+}
+
+.offersPageSettings-filters {
+  display: flex;
+  justify-content: space-between;
+}
+
+.offersPageSettings-filters-dropdown {
+  width: calc(100% / 4.1);
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 5px 5px;
+  border: none;
+  border-radius: 5px;
+
+}
+
+.offersPageSettings-slider--container {
+  margin-top: 2rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.offersPageSettings-slider {
+  -webkit-appearance: none;
+  width: 500px;
+  height: 5px;
+  border-radius: 5px;
+  background: #A3B1E1;
+  outline: none;
+  opacity: 0.7;
+  transition: background 0.2s;
+}
+
+.offersPageSettings-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #1C3988;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.offersPageSettings-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 0;
+  border-radius: 50%;
+  background: #1C3988;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.offersPageSettings-slider:active::-webkit-slider-thumb {
+  background: #122b61;
+}
+
+.offersPageSettings-slider:active::-moz-range-thumb {
+  background: #122b61;
+}
+
+.offersPageSettings-slider-indicators {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  margin-top: 10px;
+}
+
+.offersPageSettings-slider-indicator {
+  position: absolute;
+  font-size: 12px;
+  color: #000;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.offersPageSettings-slider-indicator-start {
+  left: 0;
+}
+
+.offersPageSettings-slider-indicator-end {
+  right: 0;
+}
+
+.offersPageSettings-slider-indicator-current {
+  position: absolute;
+  top: -25px;
+  transform: translateX(-50%);
+}
+
+.offerPageResultsContiner {
+  display: flex;
+  flex-basis: 33.3%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2rem 3rem;
+}
+
+.offer-listing {
+  flex-basis: 32%;
+  margin-top: 1.5rem;
+}
+
+.showmore-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.showmore-btn {
+  border: none;
+}
+
+.no_houses {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+
+.no_houses-text {
+  margin-top: 1rem;
+}
+
+.offer-link {
+  text-decoration: none;
+}
+
+.singleListing {
+  width: 100%;
+  position: relative;
+}
+
+.singleListing {
+  width: 70%;
+  margin-right: 2rem;
+}
+
+.singleListImg {
+  object-fit: contain;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.singleListingContainer {
+  display: flex;
+  width: 100%;
+  margin: 2rem 0;
+  padding: 0 3.5rem;
+}
+
+.contact-form {
+  background-color: #DADAEE;
+  border-radius: 5px;
+  padding: 20px 20px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.contactForm-input {
+  padding: 0.7rem;
+  border-radius: 5px;
+  border: none;
+  resize: none;
+}
+
+.contactForm-input:focus {
+  outline: none;
+}
+
+.contactForm-label {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.check-input {
+  margin-right: 5px;
+}
+
+.warning {
+  font-size: 13px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center
+}
+
+.btn-contact-form {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.swiper-slide.current-slide {
+  filter: grayscale(100%);
+}
+
+.singleListImg {
+  width: 100%;
+  height: auto;
+  transition: filter 0.3s ease-in-out;
+}
+
+.single-listing-img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.img-slide {
+  margin-left: 10px;
+  object-fit: fill;
+  border: 1px solid #DADAEE;
+  border-radius: 5px;
+}
+
+.swiper-container {
+  display: flex;
+}
+
+.imgCarouselPrev {
+  margin-right: 1rem;
+}
+
+.singleListDetails {
+  width: 30%;
+}
+
+.houseDetailContainer {
+  padding: 2rem 6rem;
+}
+
+.houseDetailsubContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
+.detailSub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detailSub p {
+  font-size: 13px;
+  margin-top: 10px;
+  text-transform: capitalize;
+  font-weight: 800;
+}
+
+.mortgageContainer {
+  background-color: #DADAEE;
+  padding: 2rem 2rem;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+}
+
+.mortgageShowContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mortgageContainer p {
+  font-weight: 800;
+}
+
+.mortgage-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mortgage-btn-text {
+  margin-right: 10px;
+  margin-bottom: 5px;
+  color: #FFF;
+}
+
+.mortgage-icon {
+  transition: transform 0.3s ease;
+  transform: rotate(90deg);
+}
+
+.mortage-icon-back {
+  transition: transform 0.3s ease;
+  transform: rotate(0deg);
+}
+
+.mortgage-calculator-container {
+  margin-top: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.mortgage-calculator-inputBox {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.label-container {
+  width: 40%;
+}
+
+.mortgage-calculator-label {
+  margin-right: 1rem;
+}
+
+.mortgage-calculator-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.mortgage-calculator-input:focus {
+  outline: none;
+}
+
+.advertiser_container {
+  background-color: #DADAEE;
+  margin-top: 2rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+}
+
+.advertiser_img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.houseAdditionalDetails-container {
+  background-color: #DADAEE;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  margin-top: 2rem;
+}
+
+.additionDetailBox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.additionDetailBox p {
+  margin-left: 1rem;
+}
+
+.location {
+  width: 100%;
+  height: 400px;
+}
+
+.indicator-container {
+  display: "flex";
+  align-items: "center";
+}
+
+.down_payment {
+  display: block;
+  font-size: 10px;
+}
+
+.mortgage-calculate-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.mortgageResultsContainer {
+  margin-top: 1rem;
+}
+
+.mortgageResult {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mortgageResult--heading {
+  font-family: 'Merriweather';
+  font-weight: 600;
+}
+
+.mortgageResult--text {
+  font-size: 14px;
+}
+
+.monthly_payment-details {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+}
+
+.mortgageResult--text-bold {
+  font-weight: 600;
+  text-transform: capitalize;
+}
